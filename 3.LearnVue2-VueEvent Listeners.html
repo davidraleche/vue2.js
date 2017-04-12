@@ -1,39 +1,36 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
-  <title>Vue 2</title>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 2 - David Raleche</title>
 </head>
 
 <body>
-  <div id="root">
-    <ul>
-      <li v-for="name in names" v-text="name" ></li>
-    </ul>
-    <input id="input" type="text" v-model="newName" v-on:keyUp="addName">
-    <!-- Call a directive -->
-    <button @click="addName">Add Name</button>
-    <!-- <button v-on:click="addName">Add Name</button> -->
-  </div>
-	
-
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
-
-  	<script>
-  		var app = new Vue({
-  			el: '#root',
-  			data:{
-          newName:'',
-  				names: ['Joe', 'Mary', 'Jane', 'Jack']
-  			},
+    <div id="root">
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+        <!-- <input id="input" type="text" v-model="newName" v-on:keyUp="addName"> -->
+        <input id="input" type="text" v-model="newName">
+        <!-- Call a directive -->
+        <button @click="addName">Add Name</button>
+        <!-- <button v-on:click="addName">Add Name</button> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.0/vue.js"></script>
+    <script>
+    var app = new Vue({
+        el: '#root',
+        data: {
+            newName: '',
+            names: ['Joe', 'Mary', 'Jane', 'Jack']
+        },
         methods: {
-          addName (){
-            alert('Text = ' + this.newName);
-            this.names.push(this.newName);
-            this.newName = '';
-          }
+            addName() {
+                alert('Text = ' + this.newName);
+                this.names.push(this.newName);
+                this.newName = '';
+            }
         },
 
         // mounted(){
@@ -43,9 +40,8 @@
         //     name.value = '';
         //   });
         // }
-  		});
-
-  	</script>
-
+    });
+    </script>
 </body>
+
 </html>
