@@ -8,3 +8,5 @@ command + shift + p
 - install package
 - vuejs snippets
 - set syntax: vue Component
+
+Beautify html/JS plugin for Sublime
